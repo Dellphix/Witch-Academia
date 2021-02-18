@@ -9,21 +9,21 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import witchacademia.WitchAcademia;
+import witchacademia.spells.Spell;
 import witchacademia.spells.SummonBerries;
 
-public class Scroll extends Item {
+public class Wand extends Item {
 
-    public Scroll() {
+    public Wand() {
         super (new Item.Properties()
                 .maxStackSize(1)
                 .group(WitchAcademia.setup.itemGroup));
-        setRegistryName("scroll");
+        setRegistryName("wand");
     }
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         new SummonBerries().doMagic(worldIn, playerIn);
-        //TODO scroll should disappear when used
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 }

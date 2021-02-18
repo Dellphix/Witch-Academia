@@ -7,4 +7,5 @@ public class ModItems {
 
     @ObjectHolder(WitchAcademia.MOD_ID + ":scroll")
     public static Scroll SCROLL;
+    public static Wand WAND;
 }
