@@ -17,6 +17,8 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import witchacademia.blocks.ModBlocks;
+import witchacademia.blocks.WritingDesk;
 import witchacademia.items.Scroll;
 import witchacademia.items.SpellBook;
 import witchacademia.items.Wand;
@@ -49,8 +51,8 @@ public class WitchAcademia {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
+            event.getRegistry().register(new WritingDesk());
         }
 
         @SubscribeEvent
@@ -60,6 +62,9 @@ public class WitchAcademia {
             event.getRegistry().register(new Scroll());
             event.getRegistry().register(new Wand());
             event.getRegistry().register(new SpellBook());
+
+            //TODO must we call setRegistryName() here and in WritingDesk? I guess this is registering the item version, but still
+            event.getRegistry().register(new BlockItem(ModBlocks.WRITING_DESK, properties).setRegistryName("writing_desk"));
         }
     }
 }
