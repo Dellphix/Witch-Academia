@@ -18,6 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import witchacademia.items.Scroll;
+import witchacademia.items.SpellBook;
 import witchacademia.items.Wand;
 
 import java.util.stream.Collectors;
@@ -58,6 +59,7 @@ public class WitchAcademia {
                     .group(setup.itemGroup);
             event.getRegistry().register(new Scroll());
             event.getRegistry().register(new Wand());
+            event.getRegistry().register(new SpellBook());
         }
     }
 }
