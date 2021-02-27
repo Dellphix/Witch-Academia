@@ -3,6 +3,7 @@ package witchacademia;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import witchacademia.items.ModItems;
+import witchacademia.network.Networking;
 
 public class ModSetup {
 
@@ -14,6 +15,6 @@ public class ModSetup {
     };
 
     public void init() {
-
+        Networking.registerMessages();
     }
 }

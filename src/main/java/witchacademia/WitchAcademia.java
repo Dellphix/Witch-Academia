@@ -44,6 +44,7 @@ public class WitchAcademia {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        this.setup.init();
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD

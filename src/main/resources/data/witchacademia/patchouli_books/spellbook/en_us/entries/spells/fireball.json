@@ -1,0 +1,11 @@
+{
+  "name": "Fireball",
+  "icon": "minecraft:campfire",
+  "category": "witchacademia:spells",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Some nice text about the fireball spell"
+    }
+  ]
+}

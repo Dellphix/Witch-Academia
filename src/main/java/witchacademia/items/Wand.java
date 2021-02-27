@@ -21,8 +21,13 @@ public class Wand extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        new Fireball().doMagic(worldIn, playerIn);
-        //new SummonBerries().doMagic(worldIn, playerIn);
+        ItemStack stack = playerIn.getHeldItemOffhand();
+        if (stack.getItem() instanceof SpellBook)
+        {
+            //do selected spell
+            new Fireball().doMagic(worldIn, playerIn);
+            //new SummonBerries().doMagic(worldIn, playerIn);
+        }
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 }

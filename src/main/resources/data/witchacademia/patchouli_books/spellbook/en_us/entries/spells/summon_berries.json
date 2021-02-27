@@ -1,0 +1,11 @@
+{
+  "name": "Summon Berries",
+  "icon": "minecraft:sweet_berries",
+  "category": "witchacademia:spells",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Some nice text about berries"
+    }
+  ]
+}
