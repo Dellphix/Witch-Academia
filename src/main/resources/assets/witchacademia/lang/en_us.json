@@ -3,7 +3,15 @@
   "item.witchacademia.wand": "Wand",
   "item.witchacademia.spellbook": "Spell Book",
   "block.witchacademia.writing_desk": "Writing Desk",
+  "screen.witchacademia.spellbook": "Spell Book Screen",
 
   "_comment": "Creative Tabs",
-  "itemGroup.witchacademia": "Witch Academia"
+  "itemGroup.witchacademia": "Witch Academia",
+
+
+  "_comment2": "Spells",
+  "spell.witchacademia.fireball.name": "Fireball",
+  "spell.witchacademia.fireball.description": "Creates a projectile ball of fire",
+  "spell.witchacademia.berries.name": "Summon Berries",
+  "spell.witchacademia.berries.description": "Summons between two to three berries"
 }

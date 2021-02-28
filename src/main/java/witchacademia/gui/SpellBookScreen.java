@@ -13,6 +13,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import witchacademia.WitchAcademia;
 import witchacademia.network.Networking;
 import witchacademia.network.PacketUpdateSpellBook;
+import witchacademia.spells.Fireball;
+import witchacademia.spells.SummonBerries;
 
 public class SpellBookScreen extends Screen {
 
@@ -38,8 +40,8 @@ public class SpellBookScreen extends Screen {
         int relX = (this.width - WIDTH) / 2;
         int relY = (this.height - HEIGHT) / 2;
 
-        addButton(new Button(relX + 10, relY + 10, 160, 20, new StringTextComponent("Fireball"), button -> setActiveSpell("fireball")));
-        addButton(new Button(relX + 10, relY + 37, 160, 20, new StringTextComponent("Summon Berries"), button -> setActiveSpell("berries")));
+        addButton(new Button(relX + 10, relY + 10, 160, 20, new StringTextComponent(Fireball.name.getString()), button -> setActiveSpell(Fireball.spellKey)));
+        addButton(new Button(relX + 10, relY + 37, 160, 20, new StringTextComponent(SummonBerries.name.getString()), button -> setActiveSpell(SummonBerries.spellKey)));
     }
 
     @Override

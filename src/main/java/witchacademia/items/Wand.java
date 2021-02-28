@@ -25,18 +25,28 @@ public class Wand extends Item {
         if (stack.getItem() instanceof SpellBook)
         {
             //do selected spell
-            switch (((SpellBook) stack.getItem()).activeSpell)
+            SpellBook spellBook = ((SpellBook) stack.getItem());
+            if (spellBook.activeSpell != null)
             {
-                case "fireball":
-                    new Fireball().doMagic(worldIn, playerIn);
-                    break;
-                case "berries":
-                    new SummonBerries().doMagic(worldIn, playerIn);
-                    break;
-                default:
-                    System.out.println("Spell not found");
-                    break;
+                switch (((SpellBook) stack.getItem()).activeSpell)
+                {
+                    case Fireball.spellKey:
+                        new Fireball().doMagic(worldIn, playerIn);
+                        break;
+                    case SummonBerries.spellKey:
+                        new SummonBerries().doMagic(worldIn, playerIn);
+                        break;
+                    default:
+                        System.out.println("Spell not found");
+                        break;
+                }
             }
+            else
+            {
+                //TODO need to save the spell book when you close the game so it's not always null to start with
+                System.out.println("No spell selected");
+            }
+
         }
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }

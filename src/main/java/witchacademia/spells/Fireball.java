@@ -3,9 +3,13 @@ package witchacademia.spells;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class Fireball implements Spell {
+
+    public static final String spellKey = "fireball";
+    public static final TranslationTextComponent name = new TranslationTextComponent("spell.witchacademia.fireball.name");
 
     @Override
     public void doMagic(World worldIn, PlayerEntity playerIn) {
