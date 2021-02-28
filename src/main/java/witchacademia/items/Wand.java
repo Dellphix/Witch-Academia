@@ -25,8 +25,18 @@ public class Wand extends Item {
         if (stack.getItem() instanceof SpellBook)
         {
             //do selected spell
-            new Fireball().doMagic(worldIn, playerIn);
-            //new SummonBerries().doMagic(worldIn, playerIn);
+            switch (((SpellBook) stack.getItem()).activeSpell)
+            {
+                case "fireball":
+                    new Fireball().doMagic(worldIn, playerIn);
+                    break;
+                case "berries":
+                    new SummonBerries().doMagic(worldIn, playerIn);
+                    break;
+                default:
+                    System.out.println("Spell not found");
+                    break;
+            }
         }
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }

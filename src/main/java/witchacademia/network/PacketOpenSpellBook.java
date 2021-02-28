@@ -10,6 +10,10 @@ import java.util.function.Supplier;
 public class PacketOpenSpellBook {
     public CompoundNBT tag;
 
+    public PacketOpenSpellBook(CompoundNBT tag){
+        this.tag = tag;
+    }
+
     //Decoder
     public PacketOpenSpellBook(PacketBuffer buf) {
         this.tag = buf.readCompoundTag();
@@ -17,11 +21,7 @@ public class PacketOpenSpellBook {
 
     //Encoder
     public void toBytes(PacketBuffer buf) {
-        buf.writeCompoundTag(tag);
-    }
-
-    public PacketOpenSpellBook(CompoundNBT tag){
-        this.tag = tag;
+        buf.writeCompoundTag(this.tag);
     }
 
     public void handle(Supplier<NetworkEvent.Context> ctx) {

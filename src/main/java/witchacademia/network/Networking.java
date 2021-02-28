@@ -24,11 +24,16 @@ public class Networking {
     public static void registerMessages() {
         System.out.println("Registering packets");
 
-        INSTANCE.messageBuilder(PacketOpenSpellBook.class, nextID())
-                .encoder((PacketOpenSpellBook, packetBuffer) -> {})
-                .decoder(buf -> new PacketOpenSpellBook())
-                .consumer(PacketOpenSpellBook::handle)
-                .add();
+        INSTANCE.registerMessage(nextID(),
+                PacketOpenSpellBook.class,
+                PacketOpenSpellBook::toBytes,//Encoder
+                PacketOpenSpellBook::new,//Decoder
+                PacketOpenSpellBook::handle);//consumer
+        INSTANCE.registerMessage(nextID(),
+                PacketUpdateSpellBook.class,
+                PacketUpdateSpellBook::toBytes,//Encoder
+                PacketUpdateSpellBook::new,//Decoder
+                PacketUpdateSpellBook::handle);//consumer
     }
 
     public static void sendToClient(Object packet, ServerPlayerEntity player) {

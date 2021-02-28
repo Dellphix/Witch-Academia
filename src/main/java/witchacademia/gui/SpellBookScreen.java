@@ -11,6 +11,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import witchacademia.WitchAcademia;
+import witchacademia.network.Networking;
+import witchacademia.network.PacketUpdateSpellBook;
 
 public class SpellBookScreen extends Screen {
 
@@ -45,8 +47,9 @@ public class SpellBookScreen extends Screen {
         return false;
     }
 
-    private void setActiveSpell(String id) {
-
+    private void setActiveSpell(String spell) {
+        System.out.println(spell);
+        Networking.sendToServer(new PacketUpdateSpellBook(spell));
     }
 
     @Override
