@@ -33,9 +33,7 @@ public class PacketUpdateSpellBook {
                 PlayerEntity player = ctx.get().getSender();
                 ItemStack stack = player.getHeldItemMainhand();
                 if (stack.getItem() instanceof SpellBook) {
-                    SpellBook book = (SpellBook) stack.getItem();
-                    book.setActiveSpell(this.spell);
-                    System.out.println(this.spell);
+                    SpellBook.setActiveSpell(stack.getTag(), this.spell);
                 }
             }
         });

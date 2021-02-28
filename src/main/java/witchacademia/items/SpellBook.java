@@ -19,7 +19,6 @@ import witchacademia.network.Networking;
 import witchacademia.network.PacketOpenSpellBook;
 
 public class SpellBook extends Item {
-    public String activeSpell;
 
     public SpellBook() {
         super (new Item.Properties()
@@ -32,7 +31,7 @@ public class SpellBook extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         if(!stack.hasTag()) {
-            stack.setTag(new CompoundNBT());
+            CompoundNBT tag = new CompoundNBT();
         }
 
         if (handIn == Hand.MAIN_HAND && playerIn instanceof ServerPlayerEntity) {
@@ -45,8 +44,11 @@ public class SpellBook extends Item {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
-    public void setActiveSpell(String spell)
-    {
-        this.activeSpell = spell;
+    public static void setActiveSpell(CompoundNBT tag, String spell) {
+        tag.putString("activeSpell", spell);
+    }
+
+    public static String getActiveSpell(CompoundNBT tag) {
+        return tag.getString("activeSpell");
     }
 }

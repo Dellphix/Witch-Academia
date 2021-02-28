@@ -40,8 +40,8 @@ public class SpellBookScreen extends Screen {
         int relX = (this.width - WIDTH) / 2;
         int relY = (this.height - HEIGHT) / 2;
 
-        addButton(new Button(relX + 10, relY + 10, 160, 20, new StringTextComponent(Fireball.name.getString()), button -> setActiveSpell(Fireball.spellKey)));
-        addButton(new Button(relX + 10, relY + 37, 160, 20, new StringTextComponent(SummonBerries.name.getString()), button -> setActiveSpell(SummonBerries.spellKey)));
+        addButton(new Button(relX + 10, relY + 10, 160, 20, new StringTextComponent(Fireball.NAME.getString()), button -> setActiveSpell(Fireball.SPELL_KEY)));
+        addButton(new Button(relX + 10, relY + 37, 160, 20, new StringTextComponent(SummonBerries.NAME.getString()), button -> setActiveSpell(SummonBerries.SPELL_KEY)));
     }
 
     @Override

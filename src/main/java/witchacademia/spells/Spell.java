@@ -5,8 +5,8 @@ import net.minecraft.world.World;
 
 public interface Spell {
 
-    public static final String spellKey = "";
-    public static final String name = "";
+    public static final String SPELL_KEY = "";
+    public static final String NAME = "";
 
     public void doMagic(World worldIn, PlayerEntity playerIn);
 }

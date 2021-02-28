@@ -22,18 +22,14 @@ public class Wand extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItemOffhand();
-        if (stack.getItem() instanceof SpellBook)
-        {
+        if (stack.getItem() instanceof SpellBook) {
             //do selected spell
-            SpellBook spellBook = ((SpellBook) stack.getItem());
-            if (spellBook.activeSpell != null)
-            {
-                switch (((SpellBook) stack.getItem()).activeSpell)
-                {
-                    case Fireball.spellKey:
+            if (stack.hasTag() && stack.getTag() != null) {
+                switch (SpellBook.getActiveSpell(stack.getTag())) {
+                    case Fireball.SPELL_KEY:
                         new Fireball().doMagic(worldIn, playerIn);
                         break;
-                    case SummonBerries.spellKey:
+                    case SummonBerries.SPELL_KEY:
                         new SummonBerries().doMagic(worldIn, playerIn);
                         break;
                     default:
@@ -41,9 +37,7 @@ public class Wand extends Item {
                         break;
                 }
             }
-            else
-            {
-                //TODO need to save the spell book when you close the game so it's not always null to start with
+            else {
                 System.out.println("No spell selected");
             }
 

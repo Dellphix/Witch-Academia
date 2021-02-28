@@ -15,8 +15,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SummonBerries implements Spell {
 
-    public static final String spellKey = "berries";
-    public static final TranslationTextComponent name = new TranslationTextComponent("spell.witchacademia.berries.name");
+    public static final String SPELL_KEY = "berries";
+    public static final TranslationTextComponent NAME = new TranslationTextComponent("spell.witchacademia.berries.name");
 
     @Override
     public void doMagic(World worldIn, PlayerEntity playerIn) {

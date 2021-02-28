@@ -8,8 +8,8 @@ import net.minecraft.world.World;
 
 public class Fireball implements Spell {
 
-    public static final String spellKey = "fireball";
-    public static final TranslationTextComponent name = new TranslationTextComponent("spell.witchacademia.fireball.name");
+    public static final String SPELL_KEY = "fireball";
+    public static final TranslationTextComponent NAME = new TranslationTextComponent("spell.witchacademia.fireball.name");
 
     @Override
     public void doMagic(World worldIn, PlayerEntity playerIn) {
